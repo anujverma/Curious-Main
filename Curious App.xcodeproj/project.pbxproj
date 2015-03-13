@@ -16,6 +16,7 @@
 		2BF277141AB281800080DF47 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277131AB281800080DF47 /* BrowseViewController.swift */; };
 		2BF277161AB281CE0080DF47 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277151AB281CE0080DF47 /* ProjectCell.swift */; };
 		2BF277181AB289AB0080DF47 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277171AB289AB0080DF47 /* Common.swift */; };
+		F79961121AB29432005FC48E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79961111AB29432005FC48E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		2BF277131AB281800080DF47 /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		2BF277151AB281CE0080DF47 /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		2BF277171AB289AB0080DF47 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		F79961111AB29432005FC48E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				2BF277171AB289AB0080DF47 /* Common.swift */,
 				2BF277151AB281CE0080DF47 /* ProjectCell.swift */,
 				2BF277131AB281800080DF47 /* BrowseViewController.swift */,
+				F79961111AB29432005FC48E /* DetailViewController.swift */,
 				2BB9A6C11AAE9A12001D5F71 /* Images.xcassets */,
 				2BB9A6C31AAE9A12001D5F71 /* LaunchScreen.xib */,
 				2BB9A6B81AAE9A12001D5F71 /* Supporting Files */,
@@ -224,6 +227,7 @@
 				2BF277141AB281800080DF47 /* BrowseViewController.swift in Sources */,
 				2BB9A6BD1AAE9A12001D5F71 /* ViewController.swift in Sources */,
 				2BB9A6BB1AAE9A12001D5F71 /* AppDelegate.swift in Sources */,
+				F79961121AB29432005FC48E /* DetailViewController.swift in Sources */,
 				2BF277181AB289AB0080DF47 /* Common.swift in Sources */,
 				2BF277161AB281CE0080DF47 /* ProjectCell.swift in Sources */,
 			);
