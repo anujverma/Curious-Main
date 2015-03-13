@@ -16,7 +16,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var titles = [String]()
     var images = [String]()
     var projectCell: ProjectCell!
-
     
     var topPhotoIndexRow:Int = 0
     var newHeight:CGFloat! = 200
@@ -28,6 +27,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var TOP_scale:CGFloat! = 1.5
     var BOTTOM_scale:CGFloat! = 1.0
     
+    var scrollingVelocity: CGFloat! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return images.count
     }
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+
+    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
         var visiblePhotos = projectsTableView.indexPathsForVisibleRows() as [NSIndexPath]
         var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(visiblePhotos[1])
         var rectInSuperview: CGRect = projectsTableView.convertRect(rectInTableView, toView: projectsTableView.superview)
@@ -99,17 +104,70 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else if(indexPath.row == topPhotoIndexRow) { return newHeight }
         else { return 100 }
     }
-    
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        println("released at \(velocity.y)")
+        scrollingVelocity = velocity.y
+        
     }
-    */
+    
+  
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+        println("will stop soon")
+        
+        var visiblePhotos = projectsTableView.indexPathsForVisibleRows() as [NSIndexPath]
+        
+        if(scrollingVelocity <= 0) {
+            
+            var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(visiblePhotos[0])
+            
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: -1*scrollingVelocity, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+                
+                self.projectsTableView.contentOffset.y = rectInTableView.origin.y
+                
+                }, completion: { (Bool) -> Void in
+                    //nil
+            })
+            
+        }
+        else {
+            var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(visiblePhotos[1])
+            
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: scrollingVelocity, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+                
+                self.projectsTableView.contentOffset.y = rectInTableView.origin.y
+                
+                }, completion: { (Bool) -> Void in
+                    //nil
+            })
+        }
 
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
