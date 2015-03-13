@@ -9,7 +9,7 @@
 import UIKit
 
 class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var projectsTableView: UITableView!
     
     
@@ -27,21 +27,19 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var TOP_scale:CGFloat! = 1.5
     var BOTTOM_scale:CGFloat! = 1.0
     
-    var scrollingVelocity: CGFloat! = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         newAlpha = TOP_alpha
         newScale = TOP_scale
         
         projectsTableView.dataSource = self
         projectsTableView.delegate = self
         
-        titles = ["OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project",  ]
-        images = ["string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
+        titles = ["OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project"]
+        images = ["string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,7 +79,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-
+        
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -96,7 +94,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         topPhotoIndexRow = visiblePhotos[1].row
         
         projectsTableView.reloadData()
-
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -104,51 +102,25 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else if(indexPath.row == topPhotoIndexRow) { return newHeight }
         else { return 100 }
     }
-
-
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        println("released at \(velocity.y)")
-        scrollingVelocity = velocity.y
-        
-    }
     
-  
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-        println("will stop soon")
+    
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         var visiblePhotos = projectsTableView.indexPathsForVisibleRows() as [NSIndexPath]
         
-        if(scrollingVelocity <= 0) {
-            
+        if(velocity.y <= 0) {
             var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(visiblePhotos[0])
-            
-            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: -1*scrollingVelocity, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
-                
-                self.projectsTableView.contentOffset.y = rectInTableView.origin.y
-                
-                }, completion: { (Bool) -> Void in
-                    //nil
-            })
+            targetContentOffset.memory.y = rectInTableView.origin.y
             
         }
         else {
             var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(visiblePhotos[1])
+            targetContentOffset.memory.y = rectInTableView.origin.y
             
-            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: scrollingVelocity, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
-                
-                self.projectsTableView.contentOffset.y = rectInTableView.origin.y
-                
-                }, completion: { (Bool) -> Void in
-                    //nil
-            })
         }
-
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
     }
+    
     
 }
 
