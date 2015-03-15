@@ -8,10 +8,13 @@
 
 import UIKit
 
-class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning  {
     
     @IBOutlet weak var projectsTableView: UITableView!
     
+    
+    var isPresenting: Bool = true
+    var selectedImage: UIImage!
     
     var titles = [String]()
     var images = [String]()
@@ -38,18 +41,145 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         titles = ["OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project"]
         images = ["string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
+        
+        var animateDuration = 0.5
     }
+    
+    //Custom Transition
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationVC = segue.destinationViewController as DetailViewController
+        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationVC.transitioningDelegate = self
+        destinationVC.carouselImage = selectedImage
+        
+    }
+    
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        return self
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.5
+    }
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+ 
+    
+        
+        if (isPresenting) {
+            var destinationVC = toViewController as DetailViewController
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            destinationVC.detailView.alpha = 0
+            destinationVC.instructions.alpha = 0
+            destinationVC.step1Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step2Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step3Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step4Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step5Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step6Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step7Button.transform = CGAffineTransformMakeScale(0, 0)
+            destinationVC.step8Button.transform = CGAffineTransformMakeScale(0, 0)
+            
+            
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    
+                    // Give time for the scrubbable carousel image to rewind back, and then fade in everything else below.
+                    UIView.animateWithDuration(0.5, delay: 0.1, options: nil, animations: { () -> Void in
+                        destinationVC.detailView.alpha = 1
+                        }, completion: { (finished) -> Void in
+                            
+                            //animating the steps buttons in when detailView is loaded
+                            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                destinationVC.step1Button.transform = CGAffineTransformMakeScale(1, 1)
+                                destinationVC.instructions.alpha = 1
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step2Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step3Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step4Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.15, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil
+                                    , animations: { () -> Void in
+                                        destinationVC.step5Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step6Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.25, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step7Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: nil)
+                                
+                                UIView.animateWithDuration(0.3, delay: 0.3, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                                    destinationVC.step8Button.transform = CGAffineTransformMakeScale(1, 1)
+                                    }, completion: { (finished) -> Void in
+                                        
+                                })
+                                
+                                
+                                }, completion: nil)
+                    })
+                    
+                    transitionContext.completeTransition(true)
+            }
+            
+            
+        } else {
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                fromViewController.view.alpha = 0
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+            }
+        }
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("You selected cell #\(indexPath.row)!")
+       
+    }
+    
+    
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //
+        
         projectCell = tableView.dequeueReusableCellWithIdentifier("projectCellId") as ProjectCell
         projectCell.projectLabel.text = titles[indexPath.row]
         var image = UIImage(named: images[indexPath.row])
+
+    
         projectCell.projectImageView.image = image
         
         

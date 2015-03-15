@@ -10,10 +10,29 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var carouselImageView: UIImageView!
+    @IBOutlet weak var projectTitle: UILabel!
+    @IBOutlet weak var projectDescription: UILabel!
+    @IBOutlet weak var projectDate: UILabel!
+    @IBOutlet weak var step1Button: UIButton!
+    @IBOutlet weak var step2Button: UIButton!
+    @IBOutlet weak var step3Button: UIButton!
+    @IBOutlet weak var step4Button: UIButton!
+    @IBOutlet weak var step5Button: UIButton!
+    @IBOutlet weak var step6Button: UIButton!
+    @IBOutlet weak var step7Button: UIButton!
+    @IBOutlet weak var step8Button: UIButton!
+    @IBOutlet weak var instructions: UILabel!
+    
+    
+    
+    var carouselImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +40,12 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+
     @IBAction func backButtonDidTap(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+  
     /*
     // MARK: - Navigation
 
