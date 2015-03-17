@@ -32,9 +32,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <gestureRecognizers/>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="J2y-Ff-MJQ" appends="YES" id="XdU-W3-pCd"/>
-                                                    </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mvv-VI-fm6">
                                                     <rect key="frame" x="0.0" y="40" width="320" height="21"/>
@@ -58,14 +55,10 @@
                     </view>
                     <connections>
                         <outlet property="projectsTableView" destination="gYO-MS-wIU" id="bxE-C3-JMD"/>
+                        <segue destination="dcb-7a-WCz" kind="modal" identifier="detailSegue" id="xnM-dE-62D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="J2y-Ff-MJQ">
-                    <connections>
-                        <segue destination="dcb-7a-WCz" kind="modal" identifier="detailSegue" id="k9h-5O-TqF"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130" y="319"/>
         </scene>
