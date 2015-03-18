@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B92B7991ABA46210010F01F /* Edmondsans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */; };
 		2BB9A6BB1AAE9A12001D5F71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9A6BA1AAE9A12001D5F71 /* AppDelegate.swift */; };
 		2BB9A6BD1AAE9A12001D5F71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9A6BC1AAE9A12001D5F71 /* ViewController.swift */; };
 		2BB9A6C01AAE9A12001D5F71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9A6BE1AAE9A12001D5F71 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Medium.otf"; sourceTree = "<group>"; };
 		2BB9A6B51AAE9A12001D5F71 /* Curious App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curious App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB9A6B91AAE9A12001D5F71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BB9A6BA1AAE9A12001D5F71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		2BB9A6B71AAE9A12001D5F71 /* Curious App */ = {
 			isa = PBXGroup;
 			children = (
+				2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */,
 				2BB9A6BA1AAE9A12001D5F71 /* AppDelegate.swift */,
 				2BB9A6BC1AAE9A12001D5F71 /* ViewController.swift */,
 				2BB9A6BE1AAE9A12001D5F71 /* Main.storyboard */,
@@ -206,6 +209,7 @@
 			files = (
 				2BB9A6C01AAE9A12001D5F71 /* Main.storyboard in Resources */,
 				2BB9A6C51AAE9A12001D5F71 /* LaunchScreen.xib in Resources */,
+				2B92B7991ABA46210010F01F /* Edmondsans-Medium.otf in Resources */,
 				2BB9A6C21AAE9A12001D5F71 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

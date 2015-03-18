@@ -39,8 +39,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         projectsTableView.dataSource = self
         projectsTableView.delegate = self
         
-        titles = ["OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project", "OK String", "Plant Holder", "Colorful Coasters", "Candle Project"]
-        images = ["string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
+        titles = ["OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT"]
+        images = ["string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
         
         var animateDuration = 0.5
     }
