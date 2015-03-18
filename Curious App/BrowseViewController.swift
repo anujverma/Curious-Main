@@ -14,7 +14,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     var isPresenting: Bool = true
-    var selectedImage: UIImage!
+    var selectedImage: Int!
     
     var titles = [String]()
     var images = [String]()
@@ -50,7 +50,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var destinationVC = segue.destinationViewController as DetailViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
-        destinationVC.carouselImage = selectedImage
+        destinationVC.carouselImage = images[selectedImage]
         
     }
     
@@ -95,7 +95,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     
@@ -165,14 +165,16 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("You selected cell #\(indexPath.row)!")
-       
+        println("\(indexPath.row)")
+        selectedImage = indexPath.row
+        performSegueWithIdentifier("detailSegue", sender: self)
+        
     }
     
-    
-    
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         projectCell = tableView.dequeueReusableCellWithIdentifier("projectCellId") as ProjectCell
@@ -251,6 +253,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+
     
 }
 

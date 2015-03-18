@@ -27,11 +27,13 @@ class DetailViewController: UIViewController {
     
     
     
-    var carouselImage: UIImage!
+    var carouselImage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        carouselImageView.image = UIImage(named: carouselImage)
         
     }
 
