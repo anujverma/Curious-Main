@@ -16,6 +16,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var bottomGreenC: UIImageView!
     @IBOutlet weak var topPinkC: UIImageView!
     @IBOutlet weak var topGreenC: UIImageView!
+    @IBOutlet weak var launchScreenBackgroundView: UIView!
     
     var movingImageView: UIImageView!
     
@@ -50,26 +51,14 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         subLabels = ["Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use","Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light"]
         
-        images = ["string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
+        images = ["string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
         
         selectedImage = NSIndexPath(forRow: 0, inSection: 0)
         
         var animateDuration = 0.5
         
-        UIView.animateWithDuration(0.4, animations: { () -> Void in
-//            self.bottomYellowC.transform = CGAffineTransformMakeTranslation(0, 300)
-//            self.bottomYellowC.transform = CGAffineTransformMakeRotation(50)
-            self.bottomYellowC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-200), CGAffineTransformMakeTranslation(0, 300))
-        })
+        animateLaunchScreen()
         
-        UIView.animateKeyframesWithDuration(0.4, delay: 0.2, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
-            //
-            
-        }) { (Bool) -> Void in
-            //
-        }
-        
-       
     }
     
     //Custom Transition
@@ -311,6 +300,52 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    func animateLaunchScreen(){
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            //            self.bottomYellowC.transform = CGAffineTransformMakeTranslation(0, 300)
+            //            self.bottomYellowC.transform = CGAffineTransformMakeRotation(50)
+            self.bottomYellowC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-200), CGAffineTransformMakeTranslation(0, 300))
+        })
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.4, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            self.bottomPinkC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(200), CGAffineTransformMakeTranslation(0, 300))
+            
+            }) { (Bool) -> Void in
+                //
+        }
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.6, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            self.bottomGreenC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-300), CGAffineTransformMakeTranslation(0, 300))
+            
+            }) { (Bool) -> Void in
+                //
+        }
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.8, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            self.topPinkC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(300), CGAffineTransformMakeTranslation(0, 400))
+            
+            }) { (Bool) -> Void in
+                //
+        }
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.9, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            self.topGreenC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-400), CGAffineTransformMakeTranslation(0, 450))
+            
+            }) { (Bool) -> Void in
+                //
+        }
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 1.0, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            self.launchScreenBackgroundView.transform = CGAffineTransformMakeTranslation(0, 600)
+            
+            }) { (Bool) -> Void in
+                //
+        }
+    }
 
     
 }

@@ -103,6 +103,7 @@
                         <outlet property="bottomGreenC" destination="2bZ-pF-glG" id="9VV-9T-gqv"/>
                         <outlet property="bottomPinkC" destination="B77-x6-39Z" id="qFF-X1-o8V"/>
                         <outlet property="bottomYellowC" destination="E52-No-6Y0" id="z0u-SA-Rc7"/>
+                        <outlet property="launchScreenBackgroundView" destination="gnd-0g-SSd" id="KK8-1M-zI4"/>
                         <outlet property="projectsTableView" destination="gYO-MS-wIU" id="bxE-C3-JMD"/>
                         <outlet property="topGreenC" destination="9zl-Oo-hxa" id="Yhz-Wk-ivA"/>
                         <outlet property="topPinkC" destination="P0R-oR-Tdn" id="MHh-n2-24m"/>
