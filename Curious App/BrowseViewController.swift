@@ -18,6 +18,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedImage: NSIndexPath!
     
     var titles = [String]()
+    var subLabels = [String]()
     var images = [String]()
     var projectCell: ProjectCell!
     
@@ -40,13 +41,20 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         projectsTableView.dataSource = self
         projectsTableView.delegate = self
         
-        titles = ["OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT"]
+        titles = ["OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT","OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT"]
+        
+        subLabels = ["Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use","Candle so sick, you'll never want to light","Colorful strings artwork", "Wooden planters that pop", "Fresh coasters that you'll want to use", "Candle so sick, you'll never want to light"]
+        
         images = ["string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
         
         selectedImage = NSIndexPath(forRow: 0, inSection: 0)
         
         
+        println("titles \(titles.count)")
+     
+        println("subLabels \(subLabels.count)")
         
+        println("images \(images.count)")
         var animateDuration = 0.5
     }
     
@@ -205,11 +213,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        println(indexPath.row)
         projectCell = tableView.dequeueReusableCellWithIdentifier("projectCellId") as ProjectCell
         projectCell.projectLabel.text = titles[indexPath.row]
+        projectCell.projectSubLabel.text = subLabels[indexPath.row]
         var image = UIImage(named: images[indexPath.row])
-
+        projectCell.projectSubLabel.alpha = 0
     
         projectCell.projectImageView.image = image
         
@@ -218,6 +227,11 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.mask.alpha = TOP_alpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(TOP_scale, TOP_scale)
             projectCell.projectLabel.center.y = 100
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.projectCell.projectSubLabel.alpha = 1
+
+            })
+
         }
         else if(indexPath.row == topPhotoIndexRow) {
             projectCell.mask.alpha = newAlpha
@@ -228,6 +242,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.mask.alpha = BOTTOM_alpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(BOTTOM_scale, BOTTOM_scale)
             projectCell.projectLabel.center.y = 50
+            projectCell.projectSubLabel.alpha = 0
         }
         
         
