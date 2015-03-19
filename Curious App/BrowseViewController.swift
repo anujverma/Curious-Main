@@ -301,11 +301,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func animateLaunchScreen(){
-        UIView.animateWithDuration(0.4, animations: { () -> Void in
-            //            self.bottomYellowC.transform = CGAffineTransformMakeTranslation(0, 300)
-            //            self.bottomYellowC.transform = CGAffineTransformMakeRotation(50)
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.1, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             self.bottomYellowC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-200), CGAffineTransformMakeTranslation(0, 300))
-        })
+        }) { (Bool) -> Void in
+            //
+        }
         
         UIView.animateKeyframesWithDuration(0.4, delay: 0.4, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             //
@@ -344,6 +345,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             }) { (Bool) -> Void in
                 //
+                self.launchScreenBackgroundView.hidden = true
+                self.bottomYellowC.hidden = true
+                self.bottomPinkC.hidden = true
+                self.bottomGreenC.hidden = true
+                self.topPinkC.hidden = true
+                self.topGreenC.hidden = true
         }
     }
 

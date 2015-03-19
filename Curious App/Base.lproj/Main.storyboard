@@ -290,7 +290,7 @@
         <image name="bottom-pink" width="84" height="84"/>
         <image name="bottom-yellow" width="171" height="84"/>
         <image name="number circle " width="29" height="28"/>
-        <image name="string-4" width="600" height="598"/>
+        <image name="string-4" width="600" height="612"/>
         <image name="top-green" width="171" height="84"/>
         <image name="top-pink" width="84" height="171"/>
     </resources>
