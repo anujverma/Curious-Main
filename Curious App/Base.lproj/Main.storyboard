@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="Edmondsans-Medium.otf">
             <string>Edmondsans-Medium</string>
+            <string>Edmondsans-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -35,6 +36,15 @@
                                                 <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" id="ACD-qS-0uy">
                                                     <rect key="frame" x="-160" y="-100" width="640" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wry-eY-v4H">
+                                                            <rect key="frame" x="171" y="158" width="299" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="12"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <gestureRecognizers/>
                                                 </view>
@@ -51,6 +61,7 @@
                                             <outlet property="mask" destination="ACD-qS-0uy" id="Zjp-Ov-Kkd"/>
                                             <outlet property="projectImageView" destination="aYI-ab-Y72" id="8Ke-f6-HkV"/>
                                             <outlet property="projectLabel" destination="mvv-VI-fm6" id="ire-Pa-684"/>
+                                            <outlet property="projectSubLabel" destination="wry-eY-v4H" id="ccC-T6-wKL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
