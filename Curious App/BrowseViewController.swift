@@ -12,9 +12,10 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var projectsTableView: UITableView!
     
+    var movingImageView: UIImageView!
     
     var isPresenting: Bool = true
-    var selectedImage: Int!
+    var selectedImage: NSIndexPath!
     
     var titles = [String]()
     var images = [String]()
@@ -42,6 +43,10 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         titles = ["OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT", "OK STRING", "PLANT HOLDER", "COLORFUL COASTERS", "CANDLE PROJECT"]
         images = ["string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-22.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg", "string-23.jpg", "plant-10.jpg",  "coaster-30.jpg", "candles-32.jpg"]
         
+        selectedImage = NSIndexPath(forRow: 0, inSection: 0)
+        
+        
+        
         var animateDuration = 0.5
     }
     
@@ -50,7 +55,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var destinationVC = segue.destinationViewController as DetailViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
-        destinationVC.carouselImage = images[selectedImage]
+        destinationVC.carouselImage = images[selectedImage.row]
         
     }
     
@@ -75,12 +80,27 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
- 
-    
+        movingImageView = UIImageView()
+        movingImageView.image = UIImage(named: images[selectedImage.row])
+        
+        
+        var rectInTableView: CGRect = projectsTableView.rectForRowAtIndexPath(selectedImage)
+        var rectInSuperview: CGRect = projectsTableView.convertRect(rectInTableView, toView: projectsTableView.superview)
+        movingImageView.frame = rectInSuperview
+        movingImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        movingImageView.clipsToBounds = true
+        
+        var window = UIApplication.sharedApplication().keyWindow!
+       
+        
         
         if (isPresenting) {
             var destinationVC = toViewController as DetailViewController
             containerView.addSubview(toViewController.view)
+            
+             window.addSubview(movingImageView)
+        
+            
             toViewController.view.alpha = 0
             destinationVC.detailView.alpha = 0
             destinationVC.instructions.alpha = 0
@@ -93,16 +113,24 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             destinationVC.step7Button.transform = CGAffineTransformMakeScale(0, 0)
             destinationVC.step8Button.transform = CGAffineTransformMakeScale(0, 0)
             
+            println(images[selectedImage.row])
             
-            
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                
+                
                 toViewController.view.alpha = 1
+                
+                self.movingImageView.frame = destinationVC.carouselImageView.frame
+                
                 }) { (finished: Bool) -> Void in
                     
-                    // Give time for the scrubbable carousel image to rewind back, and then fade in everything else below.
+                    self.movingImageView.removeFromSuperview()
+                    self.projectsTableView.reloadData()
+                    
                     UIView.animateWithDuration(0.5, delay: 0.1, options: nil, animations: { () -> Void in
                         destinationVC.detailView.alpha = 1
                         }, completion: { (finished) -> Void in
+                            
                             
                             //animating the steps buttons in when detailView is loaded
                             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
@@ -142,6 +170,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 
                                 
                                 }, completion: nil)
+                            
                     })
                     
                     transitionContext.completeTransition(true)
@@ -169,7 +198,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("\(indexPath.row)")
-        selectedImage = indexPath.row
+        selectedImage = indexPath
         performSegueWithIdentifier("detailSegue", sender: self)
         
     }
