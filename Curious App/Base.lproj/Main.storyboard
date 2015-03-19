@@ -108,21 +108,11 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added 6 months ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SPp-sR-6QD">
-                                                <rect key="frame" x="181" y="332" width="161" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZGN-4R-wgc">
-                                                <rect key="frame" x="46" y="328" width="145" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZGN-4R-wgc">
+                                                <rect key="frame" x="46" y="328" width="288" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Buy kit">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
+                                                <state key="normal" title="Buy kit"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tal-pe-HCn">
                                                 <rect key="frame" x="42" y="385" width="30" height="30"/>
@@ -210,6 +200,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string-4" id="niW-32-KAY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="It8-v9-Ufa" appends="YES" id="GjD-mh-MiP"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2UO-rd-I9e">
                                         <rect key="frame" x="-10" y="22" width="77" height="31"/>
@@ -231,7 +225,6 @@
                         <outlet property="carouselImageView" destination="niW-32-KAY" id="6wE-9f-Pi7"/>
                         <outlet property="detailView" destination="4DV-Fl-cDE" id="K9f-z5-vqp"/>
                         <outlet property="instructions" destination="N2d-pZ-C58" id="jiM-3J-UMz"/>
-                        <outlet property="projectDate" destination="SPp-sR-6QD" id="BvG-B5-IS4"/>
                         <outlet property="projectDescription" destination="r2F-dw-N1H" id="MAB-Lt-Ohh"/>
                         <outlet property="projectTitle" destination="2w9-sF-YeE" id="YCa-ES-7vi"/>
                         <outlet property="step1Button" destination="Tal-pe-HCn" id="yOV-E1-FQC"/>
@@ -245,6 +238,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HF-zc-O0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="It8-v9-Ufa">
+                    <connections>
+                        <action selector="imageDidPan:" destination="dcb-7a-WCz" id="x5w-s7-wND"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="576" y="319"/>
         </scene>
