@@ -11,6 +11,11 @@ import UIKit
 class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning  {
     
     @IBOutlet weak var projectsTableView: UITableView!
+    @IBOutlet weak var bottomYellowC: UIImageView!
+    @IBOutlet weak var bottomPinkC: UIImageView!
+    @IBOutlet weak var bottomGreenC: UIImageView!
+    @IBOutlet weak var topPinkC: UIImageView!
+    @IBOutlet weak var topGreenC: UIImageView!
     
     var movingImageView: UIImageView!
     
@@ -45,9 +50,22 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         selectedImage = NSIndexPath(forRow: 0, inSection: 0)
         
-        
-        
         var animateDuration = 0.5
+        
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+//            self.bottomYellowC.transform = CGAffineTransformMakeTranslation(0, 300)
+//            self.bottomYellowC.transform = CGAffineTransformMakeRotation(50)
+            self.bottomYellowC.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-200), CGAffineTransformMakeTranslation(0, 300))
+        })
+        
+        UIView.animateKeyframesWithDuration(0.4, delay: 0.2, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            
+        }) { (Bool) -> Void in
+            //
+        }
+        
+       
     }
     
     //Custom Transition

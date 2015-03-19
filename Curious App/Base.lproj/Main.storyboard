@@ -69,11 +69,43 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" id="gnd-0g-SSd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-pink" id="B77-x6-39Z">
+                                        <rect key="frame" x="95" y="321" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-green" id="2bZ-pF-glG">
+                                        <rect key="frame" x="95" y="277" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-yellow" id="E52-No-6Y0">
+                                        <rect key="frame" x="139" y="321" width="86" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="top-green" id="9zl-Oo-hxa">
+                                        <rect key="frame" x="139" y="189" width="85.5" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="top-pink" id="P0R-oR-Tdn">
+                                        <rect key="frame" x="95" y="189" width="42" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="bottomGreenC" destination="2bZ-pF-glG" id="9VV-9T-gqv"/>
+                        <outlet property="bottomPinkC" destination="B77-x6-39Z" id="qFF-X1-o8V"/>
+                        <outlet property="bottomYellowC" destination="E52-No-6Y0" id="z0u-SA-Rc7"/>
                         <outlet property="projectsTableView" destination="gYO-MS-wIU" id="bxE-C3-JMD"/>
+                        <outlet property="topGreenC" destination="9zl-Oo-hxa" id="Yhz-Wk-ivA"/>
+                        <outlet property="topPinkC" destination="P0R-oR-Tdn" id="MHh-n2-24m"/>
                         <segue destination="dcb-7a-WCz" kind="modal" identifier="detailSegue" id="xnM-dE-62D"/>
                     </connections>
                 </viewController>
@@ -253,8 +285,13 @@
     </scenes>
     <resources>
         <image name="Back Arrow" width="22" height="31"/>
+        <image name="bottom-green" width="84" height="84"/>
+        <image name="bottom-pink" width="84" height="84"/>
+        <image name="bottom-yellow" width="171" height="84"/>
         <image name="number circle " width="29" height="28"/>
         <image name="string-4" width="600" height="598"/>
+        <image name="top-green" width="171" height="84"/>
+        <image name="top-pink" width="84" height="171"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
