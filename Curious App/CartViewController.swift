@@ -48,11 +48,11 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     */
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(0.4, animations: { () -> Void in
-            self.backgroundGreenView.frame = CGRect(x: 0, y: 0, width: 320, height: 30)
-        })
+//        UIView.animateWithDuration(0.4, animations: { () -> Void in
+//            self.backgroundGreenView.frame = CGRect(x: 0, y: 0, width: 320, height: 30)
+//        })
         
-        UIView.animateKeyframesWithDuration(0.4, delay: 0.1, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+        UIView.animateKeyframesWithDuration(0.4, delay: 0, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             self.backgroundGreenView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
             }) { (Bool) -> Void in
                 //
