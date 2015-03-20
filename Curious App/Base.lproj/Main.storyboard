@@ -10,6 +10,7 @@
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
+            <string>Edmondsans-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -150,6 +151,9 @@
                                                 <color key="backgroundColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="18"/>
                                                 <state key="normal" title="Buy kit"/>
+                                                <connections>
+                                                    <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="jJh-Sx-7g1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tal-pe-HCn">
                                                 <rect key="frame" x="42" y="385" width="30" height="30"/>
@@ -259,6 +263,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="buyButton" destination="ZGN-4R-wgc" id="Qjh-dn-SUb"/>
                         <outlet property="carouselImageView" destination="niW-32-KAY" id="6wE-9f-Pi7"/>
                         <outlet property="detailView" destination="4DV-Fl-cDE" id="K9f-z5-vqp"/>
                         <outlet property="instructions" destination="N2d-pZ-C58" id="jiM-3J-UMz"/>
@@ -272,6 +277,7 @@
                         <outlet property="step6Button" destination="bEK-6Y-sKd" id="Qwd-LW-tes"/>
                         <outlet property="step7Button" destination="Nn3-kC-Eu7" id="Px7-h3-fTY"/>
                         <outlet property="step8Button" destination="eGg-Lk-ho3" id="eOr-Cg-a2P"/>
+                        <segue destination="Xy5-uM-3Cw" kind="modal" identifier="cartSegue" id="3He-3n-dQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HF-zc-O0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,6 +288,53 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="576" y="319"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="RaJ-Z3-Ltx">
+            <objects>
+                <viewController id="Xy5-uM-3Cw" customClass="CartViewController" customModule="Curious_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ob7-un-zVc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="RDo-1J-oO3">
+                                <rect key="frame" x="16" y="330" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.80392156862745101" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jgl-CM-dQI">
+                                <rect key="frame" x="8" y="22" width="39" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Back Arrow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTap:" destination="dcb-7a-WCz" eventType="touchUpInside" id="pXH-GL-80l"/>
+                                    <action selector="backButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="WJJ-Zc-b04"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="30t-xS-JYI">
+                                <rect key="frame" x="16" y="510" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="18"/>
+                                <state key="normal" title="Buy kit">
+                                    <color key="titleColor" red="0.10196078431372549" green="0.80392156862745101" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="Zz6-o9-Ob6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundGreenView" destination="RDo-1J-oO3" id="lLe-6J-Z5l"/>
+                        <outlet property="cartBuyButton" destination="30t-xS-JYI" id="1Y9-Og-7T0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDv-6n-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="319"/>
         </scene>
     </scenes>
     <resources>

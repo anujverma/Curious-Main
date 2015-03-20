@@ -24,7 +24,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var step7Button: UIButton!
     @IBOutlet weak var step8Button: UIButton!
     @IBOutlet weak var instructions: UILabel!
-    
+    @IBOutlet weak var buyButton: UIButton!
+
     //for scrubbing
     var imageNamePrefix:String = ""
     var imageNameMIN:Int = 0
@@ -89,5 +90,10 @@ class DetailViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func buyButtonWasTapped(sender: AnyObject) {
+        performSegueWithIdentifier("cartSegue", sender: self)
+    }
+    
     
 }
