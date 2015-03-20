@@ -221,7 +221,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         projectCell.projectLabel.text = titles[indexPath.row]
         projectCell.projectSubLabel.text = subLabels[indexPath.row]
         var image = UIImage(named: images[indexPath.row])
-        projectCell.projectSubLabel.alpha = 0
     
         projectCell.projectImageView.image = image
         
@@ -230,16 +229,14 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.mask.alpha = TOP_alpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(TOP_scale, TOP_scale)
             projectCell.projectLabel.center.y = 100
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.projectCell.projectSubLabel.alpha = 1
-
-            })
+            projectCell.projectSubLabel.alpha = 1
 
         }
         else if(indexPath.row == topPhotoIndexRow) {
             projectCell.mask.alpha = newAlpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(newScale, newScale)
             projectCell.projectLabel.center.y = newHeight/2
+            projectCell.projectSubLabel.alpha = (newHeight - 100) / 100
         }
         else {
             projectCell.mask.alpha = BOTTOM_alpha
@@ -248,6 +245,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.projectSubLabel.alpha = 0
         }
         
+        
+
         
         return projectCell
     }

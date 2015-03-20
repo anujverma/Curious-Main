@@ -49,7 +49,7 @@ class DetailViewController: UIViewController {
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
         
         
-        animateImageBackToFirstStep()
+        animateImageBackToFirstStep(imageNameMAX)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,10 +57,22 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func animateImageBackToFirstStep() {
+    func animateImageBackToFirstStep(current: Int) {
         
-        
-        
+        UIView.animateWithDuration(0.05, animations: { () -> Void in
+            //animate to the previous image
+            var newImage: Int = current - 1
+            self.carouselImageView.alpha = 0.99
+            self.carouselImageView.image = UIImage(named: self.imageNamePrefix + "-" + String(newImage) + ".jpg")
+            self.currentImage = newImage
+            
+        }) { (Bool) -> Void in
+            //check if there is one more image to animate to
+            self.carouselImageView.alpha = 1
+            if(current > 1) {
+                self.animateImageBackToFirstStep(current-1)
+            }
+        }
     }
 
     @IBAction func backButtonDidTap(sender: AnyObject) {
