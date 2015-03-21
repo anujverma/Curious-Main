@@ -12,6 +12,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
 
     @IBOutlet weak var backgroundGreenView: UIView!
     @IBOutlet weak var cartBuyButton: UIButton!
+    @IBOutlet weak var cartMainImage: UIImageView!
     
     var isPresenting: Bool = true
     
@@ -30,6 +31,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         // Do any additional setup after loading the view.
         cartBuyButton.center.y = 620
         cartBuyButton.alpha = 0
+        cartMainImage.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,11 +103,20 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if (isPresenting) {
+            
+            var detailVC = fromViewController as DetailViewController
+            var imageFromDetail = detailVC.carouselImageView
+            self.cartMainImage.image = imageFromDetail.image
+            
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             UIView.animateWithDuration(0.2, delay: 0, options: nil, animations: { () -> Void in
                 toViewController.view.alpha = 1
+                
+                UIView.animateKeyframesWithDuration(0.4, delay: 0.5, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+                    self.cartMainImage.alpha = 1
 
+                }, completion: nil)
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
