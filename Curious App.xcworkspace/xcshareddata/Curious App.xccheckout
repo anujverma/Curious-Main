@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ECC57598-1199-4973-8DA7-12F4A21516DF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Curious App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA62D0BB89ECCDEF9C01CAF70A73FFEEB91F7A4A</key>
+		<string>https://github.com/anujverma/Curious-Main.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Curious App.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA62D0BB89ECCDEF9C01CAF70A73FFEEB91F7A4A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/anujverma/Curious-Main.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA62D0BB89ECCDEF9C01CAF70A73FFEEB91F7A4A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA62D0BB89ECCDEF9C01CAF70A73FFEEB91F7A4A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Curious%20Main</string>
+		</dict>
+	</array>
+</dict>
+</plist>
