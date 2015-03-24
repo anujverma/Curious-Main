@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     var imageNameMAX:Int = 0
     var imageNameMAXs: [String: Int!] = ["candles":32, "coaster":30, "plant":10, "string":22, "wood":16]
     var imageSpeed:CGFloat = 0.1
+    var scrollBackSpeed:NSTimeInterval!
     var currentImage:Int!
     var initialImage:Int!
     
@@ -48,9 +49,9 @@ class DetailViewController: UIViewController {
         
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
+        scrollBackSpeed = NSTimeInterval( 4 / Double(imageNameMAX) )
         
-        
-        animateImageBackToFirstStep(imageNameMAX)
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,14 +59,19 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func resetToFirstStep() {
+        animateImageBackToFirstStep(imageNameMAX)
+    }
+    
     func animateImageBackToFirstStep(current: Int) {
         
-        UIView.animateWithDuration(0.05, animations: { () -> Void in
+        UIView.animateWithDuration(self.scrollBackSpeed, animations: { () -> Void in
             //animate to the previous image
             var newImage: Int = current - 1
             self.carouselImageView.alpha = 0.99
             self.carouselImageView.image = UIImage(named: self.imageNamePrefix + "-" + String(newImage) + ".jpg")
             self.currentImage = newImage
+            println("Loaded " + self.imageNamePrefix + "-" + String(newImage) + ".jpg")
             
         }) { (Bool) -> Void in
             //check if there is one more image to animate to
