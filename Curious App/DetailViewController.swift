@@ -35,8 +35,11 @@ class DetailViewController: UIViewController {
     var currentImage:Int!
     var initialImage:Int!
     
-    
+    // passing project information
     var carouselImage: String!
+    var detailTitle: String!
+    var detailSubLabel: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,9 @@ class DetailViewController: UIViewController {
 
         carouselImageView.image = UIImage(named: carouselImage)
         carouselImageView.userInteractionEnabled = true
+        
+        projectTitle.text = detailTitle
+        projectDescription.text = detailSubLabel
         
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
