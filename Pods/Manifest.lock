@@ -1,0 +1,13 @@
+PODS:
+  - PNChart (0.8.2):
+    - UICountingLabel (~> 1.0.0)
+  - UICountingLabel (1.0.0)
+
+DEPENDENCIES:
+  - PNChart
+
+SPEC CHECKSUMS:
+  PNChart: 32b4ffa1ca525e255083204a3601447e85367321
+  UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
+
+COCOAPODS: 0.36.0

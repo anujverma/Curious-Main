@@ -132,7 +132,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             destinationVC.step7Button.transform = CGAffineTransformMakeScale(0, 0)
             destinationVC.step8Button.transform = CGAffineTransformMakeScale(0, 0)
             
-            println(images[selectedImage.row])
+            //println(images[selectedImage.row])
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 
@@ -216,7 +216,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("\(indexPath.row)")
+        //println("\(indexPath.row)")
         selectedImage = indexPath
     
         performSegueWithIdentifier("detailSegue", sender: self)
@@ -226,7 +226,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println(indexPath.row)
+        //println(indexPath.row)
         projectCell = tableView.dequeueReusableCellWithIdentifier("projectCellId") as ProjectCell
         projectCell.projectLabel.text = titles[indexPath.row]
         projectCell.projectSubLabel.text = subLabels[indexPath.row]

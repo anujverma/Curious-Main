@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PNChart
 
 class DetailViewController: UIViewController {
 
@@ -35,6 +36,10 @@ class DetailViewController: UIViewController {
     var currentImage:Int!
     var initialImage:Int!
     
+    //for auto scrubbing back to 1st step
+    var rewind:PNCircleChart!
+    var scrollBackSpeed:NSTimeInterval!
+    
     // passing project information
     var carouselImage: String!
     var detailTitle: String!
@@ -54,9 +59,25 @@ class DetailViewController: UIViewController {
         
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
+        scrollBackSpeed = NSTimeInterval( 4 / Double(imageNameMAX) )
         
+        //set up autoscrollback counter
+        var rewindFrame:CGRect = CGRectMake(self.view.frame.width/2 - 50, 50, 100, 100)
+        rewind = PNCircleChart(frame: rewindFrame, total: imageNameMAX, current: imageNameMAX, clockwise: false)
+        rewind.total = imageNameMAX
+        rewind.current = imageNameMAX
+        rewind.duration = NSTimeInterval(0.5)
+        rewind.chartType = PNChartFormatType.None
+        rewind.countingLabel.textColor = UIColor.whiteColor()
+        rewind.backgroundColor = UIColor.clearColor()
+        rewind.strokeColor = UIColor.whiteColor()
+        rewind.strokeChart()
+        rewind.updateChartByCurrent(imageNameMAX)
+        rewind.alpha = 0
+        self.view.addSubview(rewind)
         
-        animateImageBackToFirstStep(imageNameMAX)
+        //give everything time to load and then rewind back to first step
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,9 +85,19 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func resetToFirstStep() {
+        
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            self.rewind.alpha = 1
+        })
+        
+        rewind.updateChartByCurrent(imageNameMAX)
+        animateImageBackToFirstStep(imageNameMAX)
+    }
+    
     func animateImageBackToFirstStep(current: Int) {
         
-        UIView.animateWithDuration(0.05, animations: { () -> Void in
+        UIView.animateWithDuration(self.scrollBackSpeed, animations: { () -> Void in
             //animate to the previous image
             var newImage: Int = current - 1
             self.carouselImageView.alpha = 0.99
@@ -74,10 +105,22 @@ class DetailViewController: UIViewController {
             self.currentImage = newImage
             
         }) { (Bool) -> Void in
-            //check if there is one more image to animate to
             self.carouselImageView.alpha = 1
+            self.rewind.updateChartByCurrent(current-1)
+
+            //check if there is one more image to animate to
             if(current > 1) {
                 self.animateImageBackToFirstStep(current-1)
+            }
+            
+            else {
+                
+                UIView.animateWithDuration(0.4, animations: { () -> Void in
+                    self.rewind.alpha = 0
+                }, completion: { (Bool) -> Void in
+                    self.rewind.removeFromSuperview()
+                })
+                
             }
         }
     }
