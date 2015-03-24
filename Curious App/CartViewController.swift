@@ -97,8 +97,18 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 5, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             self.cartBuyButton.center.y = 620
             self.cartBuyButton.alpha = 0
+
             }) { (Bool) -> Void in
                 //
+            }
+        
+        UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            //
+            self.cartPriceLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
+            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
+            self.cartItemsLabel.alpha = 0
+        }) { (Bool) -> Void in
+            //
         }
         
         UIView.animateKeyframesWithDuration(0.4, delay: 0.2, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in

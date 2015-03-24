@@ -361,7 +361,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7s1-2K-yqR">
                                 <rect key="frame" x="16" y="314" width="288" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Card stock (8.5in x 11in), 240gsmTemplatesPrinterScissors or cutterRulerCraft glueHouse paintPaintbrush</string>
+                                <string key="text">Card stock (8.5in x 11in), 240gsm
+Templates
+Printer
+Scissors or cutter
+Ruler
+Craft glue
+House paint
+Paintbrush</string>
                                 <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
