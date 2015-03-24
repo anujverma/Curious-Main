@@ -16,6 +16,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var cartTitleLabel: UILabel!
     @IBOutlet weak var cartPriceLabel: UILabel!
     @IBOutlet weak var cartQuantityLabel: UILabel!
+    @IBOutlet weak var cartItemsLabel: UILabel!
     
     var isPresenting: Bool = true
     
@@ -40,6 +41,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         cartQuantityLabel.alpha = 0
         cartQuantityLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
         cartTitleLabel.alpha = 0
+        cartItemsLabel.alpha = 0
 
     }
 
@@ -144,6 +146,8 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
                     self.cartPriceLabel.alpha = 1
                     self.cartQuantityLabel.alpha = 1
                     self.cartTitleLabel.alpha = 1
+                    self.cartItemsLabel.alpha = 1
+
                 }, completion: nil)
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)

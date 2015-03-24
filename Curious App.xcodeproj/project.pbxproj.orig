@@ -18,7 +18,6 @@
 		2BB9A6C21AAE9A12001D5F71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9A6C11AAE9A12001D5F71 /* Images.xcassets */; };
 		2BB9A6C51AAE9A12001D5F71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9A6C31AAE9A12001D5F71 /* LaunchScreen.xib */; };
 		2BB9A6D11AAE9A12001D5F71 /* Curious_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9A6D01AAE9A12001D5F71 /* Curious_AppTests.swift */; };
-		2BBC0CF21AC124C50030369E /* Edmondsans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BBC0CF11AC124C30030369E /* Edmondsans-Regular.otf */; };
 		2BF277141AB281800080DF47 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277131AB281800080DF47 /* BrowseViewController.swift */; };
 		2BF277161AB281CE0080DF47 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277151AB281CE0080DF47 /* ProjectCell.swift */; };
 		2BF277181AB289AB0080DF47 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF277171AB289AB0080DF47 /* Common.swift */; };
@@ -53,7 +52,6 @@
 		2BB9A6CA1AAE9A12001D5F71 /* Curious AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Curious AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB9A6CF1AAE9A12001D5F71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BB9A6D01AAE9A12001D5F71 /* Curious_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curious_AppTests.swift; sourceTree = "<group>"; };
-		2BBC0CF11AC124C30030369E /* Edmondsans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Regular.otf"; sourceTree = "<group>"; };
 		2BF277131AB281800080DF47 /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		2BF277151AB281CE0080DF47 /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		2BF277171AB289AB0080DF47 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */,
 				2BA0B9CC1AC0FB47009F9DEB /* Edmondsans-Bold.otf */,
-				2BBC0CF11AC124C30030369E /* Edmondsans-Regular.otf */,
 				2BB9A6BA1AAE9A12001D5F71 /* AppDelegate.swift */,
 				2BB9A6BC1AAE9A12001D5F71 /* ViewController.swift */,
 				2BB9A6BE1AAE9A12001D5F71 /* Main.storyboard */,
@@ -246,10 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D6CB201AC110D400DAF6AF /* Podfile in Resources */,
+<<<<<<< HEAD
 				2BA0B9CD1AC0FB4A009F9DEB /* Edmondsans-Bold.otf in Resources */,
+=======
+				24D6CB201AC110D400DAF6AF /* Podfile in Resources */,
+>>>>>>> 4360f6e8e15f4a0d1f8d131f82ee71cc80c8bd66
 				2BB9A6C01AAE9A12001D5F71 /* Main.storyboard in Resources */,
-				2BBC0CF21AC124C50030369E /* Edmondsans-Regular.otf in Resources */,
 				2BB9A6C51AAE9A12001D5F71 /* LaunchScreen.xib in Resources */,
 				2B92B7991ABA46210010F01F /* Edmondsans-Medium.otf in Resources */,
 				2BB9A6C21AAE9A12001D5F71 /* Images.xcassets in Resources */,

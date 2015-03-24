@@ -17,6 +17,9 @@
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
         </mutableArray>
+        <mutableArray key="Edmondsans-Regular.otf">
+            <string>Edmondsans-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Browse View Controller-->
@@ -342,17 +345,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3G-C1-yBI">
-                                <rect key="frame" x="16" y="267" width="215" height="43"/>
+                                <rect key="frame" x="16" y="271" width="215" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kRP-Dh-Bd3">
-                                <rect key="frame" x="233" y="267" width="64" height="43"/>
+                                <rect key="frame" x="233" y="271" width="64" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="34"/>
                                 <color key="textColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7s1-2K-yqR">
+                                <rect key="frame" x="16" y="314" width="288" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Card stock (8.5in x 11in), 240gsmTemplatesPrinterScissors or cutterRulerCraft glueHouse paintPaintbrush</string>
+                                <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -360,6 +371,7 @@
                     <connections>
                         <outlet property="backgroundGreenView" destination="RDo-1J-oO3" id="lLe-6J-Z5l"/>
                         <outlet property="cartBuyButton" destination="30t-xS-JYI" id="1Y9-Og-7T0"/>
+                        <outlet property="cartItemsLabel" destination="7s1-2K-yqR" id="akZ-32-AQk"/>
                         <outlet property="cartMainImage" destination="bou-fz-lkq" id="4k2-7S-hlx"/>
                         <outlet property="cartPriceLabel" destination="M3G-C1-yBI" id="ROd-vA-n41"/>
                         <outlet property="cartQuantityLabel" destination="kRP-Dh-Bd3" id="qYb-Rv-b5m"/>
