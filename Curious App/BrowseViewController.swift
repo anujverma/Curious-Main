@@ -18,10 +18,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var topGreenC: UIImageView!
     @IBOutlet weak var launchScreenBackgroundView: UIView!
     
-    var movingImageView: UIImageView!
     
+    //Passing info over
+    var movingImageView: UIImageView!
     var isPresenting: Bool = true
     var selectedImage: NSIndexPath!
+
     
     var titles = [String]()
     var subLabels = [String]()
@@ -67,7 +69,13 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
         destinationVC.carouselImage = images[selectedImage.row]
+        destinationVC.detailTitle = titles[selectedImage.row]
+        destinationVC.detailSubLabel = subLabels[selectedImage.row]
         
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
@@ -210,7 +218,9 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //println("\(indexPath.row)")
         selectedImage = indexPath
+    
         performSegueWithIdentifier("detailSegue", sender: self)
+        
         
     }
     
