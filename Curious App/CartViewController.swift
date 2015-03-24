@@ -13,6 +13,9 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var backgroundGreenView: UIView!
     @IBOutlet weak var cartBuyButton: UIButton!
     @IBOutlet weak var cartMainImage: UIImageView!
+    @IBOutlet weak var cartTitleLabel: UILabel!
+    @IBOutlet weak var cartPriceLabel: UILabel!
+    @IBOutlet weak var cartQuantityLabel: UILabel!
     
     var isPresenting: Bool = true
     
@@ -32,6 +35,12 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         cartBuyButton.center.y = 620
         cartBuyButton.alpha = 0
         cartMainImage.alpha = 0
+        cartPriceLabel.alpha = 0
+        cartPriceLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        cartQuantityLabel.alpha = 0
+        cartQuantityLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        cartTitleLabel.alpha = 0
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,11 +63,25 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
 //            self.backgroundGreenView.frame = CGRect(x: 0, y: 0, width: 320, height: 30)
 //        })
         
-        UIView.animateKeyframesWithDuration(0.4, delay: 0, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
-            self.backgroundGreenView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
-            }) { (Bool) -> Void in
-                //
+
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            self.backgroundGreenView.frame = CGRect(x: 0, y: 219, width: 320, height: 349)
+
+        }) { (Bool) -> Void in
+            //
         }
+        
+        UIView.animateWithDuration(0.8, delay: 0.4, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+            self.cartPriceLabel.transform = CGAffineTransformMakeScale(1, 1)
+            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(1, 1)
+            self.cartTitleLabel.textColor = UIColor.whiteColor()
+            self.cartPriceLabel.textColor = UIColor.whiteColor()
+        
+        }) { (Bool) -> Void in
+            //
+                   }
+        
+
         
         UIView.animateWithDuration(0.4, delay: 1.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             self.cartBuyButton.center.y = 520
@@ -107,6 +130,9 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
             var detailVC = fromViewController as DetailViewController
             var imageFromDetail = detailVC.carouselImageView
             self.cartMainImage.image = imageFromDetail.image
+
+            var titleFromDetail = detailVC.detailTitle
+            self.cartTitleLabel.text = titleFromDetail
             
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
@@ -115,7 +141,9 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
                 
                 UIView.animateKeyframesWithDuration(0.4, delay: 0.5, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
                     self.cartMainImage.alpha = 1
-
+                    self.cartPriceLabel.alpha = 1
+                    self.cartQuantityLabel.alpha = 1
+                    self.cartTitleLabel.alpha = 1
                 }, completion: nil)
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
@@ -129,6 +157,8 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
             }
         }
     }
+    
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

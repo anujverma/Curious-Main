@@ -4,7 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Edmondsans-Bold.otf">
+            <string>Edmondsans-Bold</string>
+            <string>Edmondsans-Bold</string>
+        </mutableArray>
         <mutableArray key="Edmondsans-Medium.otf">
+            <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
@@ -76,23 +81,23 @@
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-pink" id="B77-x6-39Z">
                                         <rect key="frame" x="95" y="321" width="42" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-green" id="2bZ-pF-glG">
                                         <rect key="frame" x="95" y="277" width="42" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bottom-yellow" id="E52-No-6Y0">
                                         <rect key="frame" x="139" y="321" width="86" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="top-green" id="9zl-Oo-hxa">
                                         <rect key="frame" x="139" y="189" width="86" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="top-pink" id="P0R-oR-Tdn">
                                         <rect key="frame" x="95" y="189" width="42" height="86"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,7 +245,7 @@
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="string-4" id="niW-32-KAY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="It8-v9-Ufa" appends="YES" id="GjD-mh-MiP"/>
@@ -314,7 +319,7 @@
                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="Zz6-o9-Ob6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -329,12 +334,36 @@
                                     <action selector="backButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="WJJ-Zc-b04"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK STRING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tXf-Kd-hrH">
+                                <rect key="frame" x="16" y="238" width="268" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3G-C1-yBI">
+                                <rect key="frame" x="16" y="267" width="215" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kRP-Dh-Bd3">
+                                <rect key="frame" x="233" y="267" width="64" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="34"/>
+                                <color key="textColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="backgroundGreenView" destination="RDo-1J-oO3" id="lLe-6J-Z5l"/>
                         <outlet property="cartBuyButton" destination="30t-xS-JYI" id="1Y9-Og-7T0"/>
                         <outlet property="cartMainImage" destination="bou-fz-lkq" id="4k2-7S-hlx"/>
+                        <outlet property="cartPriceLabel" destination="M3G-C1-yBI" id="ROd-vA-n41"/>
+                        <outlet property="cartQuantityLabel" destination="kRP-Dh-Bd3" id="qYb-Rv-b5m"/>
+                        <outlet property="cartTitleLabel" destination="tXf-Kd-hrH" id="qlz-wu-abN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDv-6n-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
