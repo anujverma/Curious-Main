@@ -31,8 +31,10 @@ class DetailViewController: UIViewController {
     var initialImage:Int!
     
     //for auto scrubbing back to 1st step
+    var rewindDuration:Double = 4
     var rewind:PNCircleChart!
     var scrollBackSpeed:NSTimeInterval!
+    var rewindLabel:UILabel!
     
     // passing project information
     var carouselImage: String!
@@ -56,10 +58,25 @@ class DetailViewController: UIViewController {
         
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
-        scrollBackSpeed = NSTimeInterval( 4 / Double(imageNameMAX) )
+        scrollBackSpeed = NSTimeInterval( rewindDuration / Double(imageNameMAX) )
         
         //set up autoscrollback counter
-        var rewindFrame:CGRect = CGRectMake(self.view.frame.width/2 - 50, 50, 100, 100)
+        setupRewindCounter()
+        
+        //set up message
+        setupRewindLabel()
+        
+        //give everything time to load and then rewind back to first step
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setupRewindCounter() {
+        var rewindFrame:CGRect = CGRectMake(self.view.frame.width/2 - 50, 25, 100, 100)
         rewind = PNCircleChart(frame: rewindFrame, total: imageNameMAX, current: imageNameMAX, clockwise: false)
         rewind.total = imageNameMAX
         rewind.current = imageNameMAX
@@ -70,22 +87,41 @@ class DetailViewController: UIViewController {
         rewind.strokeColor = UIColor.whiteColor()
         rewind.strokeChart()
         rewind.updateChartByCurrent(imageNameMAX)
+        
+        //setup shadow
+        var layer = rewind.layer
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 6
+        
         rewind.alpha = 0
         self.view.addSubview(rewind)
-        
-        //give everything time to load and then rewind back to first step
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupRewindLabel() {
+        var rewindLabelFrame:CGRect = CGRectMake(0, 150, self.view.frame.width, 40)
+        rewindLabel = UILabel(frame: rewindLabelFrame)
+        rewindLabel.text = "Taking you back to how it all started..."
+        rewindLabel.textColor = UIColor.whiteColor()
+        rewindLabel.textAlignment = NSTextAlignment.Center
+        
+        //setup shadow
+        var layer = rewindLabel.layer
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 6
+        
+        rewindLabel.alpha = 0
+        self.view.addSubview(rewindLabel)
     }
     
     func resetToFirstStep() {
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.rewind.alpha = 1
+            self.rewindLabel.alpha = 1
         })
         
         rewind.updateChartByCurrent(imageNameMAX)
@@ -115,8 +151,10 @@ class DetailViewController: UIViewController {
                 UIView.animateWithDuration(0.4, animations: { () -> Void in
                     self.instructions.alpha = 1
                     self.rewind.alpha = 0
+                    self.rewindLabel.alpha = 0
                 }, completion: { (Bool) -> Void in
                     self.rewind.removeFromSuperview()
+                    self.rewindLabel.removeFromSuperview()
                 })
                 
             }
