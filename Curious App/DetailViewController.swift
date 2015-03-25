@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var carouselImageView: UIImageView!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var projectDescription: UILabel!
+    @IBOutlet weak var instructionsScrollView: UIScrollView!
     @IBOutlet weak var instructions: UIView!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var instructionsStepNumber: UILabel!
