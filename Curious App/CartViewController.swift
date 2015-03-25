@@ -38,6 +38,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         cartBuyButton.alpha = 0
         cartMainImage.alpha = 0
         cartPriceLabel.alpha = 0
+        cartQuantityButton.alpha = 0 
         cartPriceLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
 //        cartQuantityLabel.alpha = 0
 //        cartQuantityLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
