@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24D6CB201AC110D400DAF6AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 24D6CB1F1AC110D400DAF6AF /* Podfile */; };
 		2B4B08D31ABB836F002AA3C3 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B08D21ABB836F002AA3C3 /* CartViewController.swift */; };
+		2B5130D91AC26838008AB4F7 /* QuantityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5130D81AC26838008AB4F7 /* QuantityViewController.swift */; };
 		2B92B7991ABA46210010F01F /* Edmondsans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */; };
 		2BA0B9CB1ABB968F009F9DEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0B9CA1ABB968F009F9DEB /* DetailViewController.swift */; };
 		2BA0B9CD1AC0FB4A009F9DEB /* Edmondsans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0B9CC1AC0FB47009F9DEB /* Edmondsans-Bold.otf */; };
@@ -40,6 +41,7 @@
 		0E897A90A48A520266DD3D23 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		24D6CB1F1AC110D400DAF6AF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		2B4B08D21ABB836F002AA3C3 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		2B5130D81AC26838008AB4F7 /* QuantityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityViewController.swift; sourceTree = "<group>"; };
 		2B92B7981ABA461E0010F01F /* Edmondsans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Medium.otf"; sourceTree = "<group>"; };
 		2BA0B9CA1ABB968F009F9DEB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2BA0B9CC1AC0FB47009F9DEB /* Edmondsans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Bold.otf"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				2BBC0CF11AC124C30030369E /* Edmondsans-Regular.otf */,
 				2BB9A6BA1AAE9A12001D5F71 /* AppDelegate.swift */,
 				2BB9A6BC1AAE9A12001D5F71 /* ViewController.swift */,
+				2B5130D81AC26838008AB4F7 /* QuantityViewController.swift */,
 				2BB9A6BE1AAE9A12001D5F71 /* Main.storyboard */,
 				2B4B08D21ABB836F002AA3C3 /* CartViewController.swift */,
 				2BF277171AB289AB0080DF47 /* Common.swift */,
@@ -323,6 +326,7 @@
 				2B4B08D31ABB836F002AA3C3 /* CartViewController.swift in Sources */,
 				2BB9A6BB1AAE9A12001D5F71 /* AppDelegate.swift in Sources */,
 				2BF277181AB289AB0080DF47 /* Common.swift in Sources */,
+				2B5130D91AC26838008AB4F7 /* QuantityViewController.swift in Sources */,
 				2BF277161AB281CE0080DF47 /* ProjectCell.swift in Sources */,
 				2BA0B9CB1ABB968F009F9DEB /* DetailViewController.swift in Sources */,
 			);

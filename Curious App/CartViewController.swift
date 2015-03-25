@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class CartViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, QuantityNumberDelegate {
 
     @IBOutlet weak var backgroundGreenView: UIView!
     @IBOutlet weak var cartBuyButton: UIButton!
@@ -16,6 +16,7 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var cartTitleLabel: UILabel!
     @IBOutlet weak var cartPriceLabel: UILabel!
     @IBOutlet weak var cartQuantityLabel: UILabel!
+    @IBOutlet weak var cartQuantityButton: UIButton! = UIButton()
     @IBOutlet weak var cartItemsLabel: UILabel!
     
     var isPresenting: Bool = true
@@ -44,6 +45,10 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         cartItemsLabel.alpha = 0
 
     }
+    
+    func quantityAmount(info: NSString) {
+        cartQuantityButton.titleLabel?.text = info
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,6 +56,13 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "quantitySegue" {
+            let quantityVC:QuantityViewController = segue.destinationViewController as QuantityViewController
+            quantityVC.delegate = self
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -104,9 +116,11 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             //
-            self.cartPriceLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
-            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
+//            self.cartPriceLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
+//            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
             self.cartItemsLabel.alpha = 0
+            self.cartQuantityLabel.alpha = 0
+            self.cartPriceLabel.alpha = 0
         }) { (Bool) -> Void in
             //
         }
@@ -176,4 +190,9 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func quantityButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("quantitySegue", sender: self)
+    }
+    
 }

@@ -7,6 +7,10 @@
         <mutableArray key="Edmondsans-Bold.otf">
             <string>Edmondsans-Bold</string>
             <string>Edmondsans-Bold</string>
+            <string>Edmondsans-Bold</string>
+            <string>Edmondsans-Bold</string>
+            <string>Edmondsans-Bold</string>
+            <string>Edmondsans-Bold</string>
         </mutableArray>
         <mutableArray key="Edmondsans-Medium.otf">
             <string>Edmondsans-Medium</string>
@@ -312,6 +316,19 @@ Paintbrush</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ugj-3V-Eyz">
+                                <rect key="frame" x="152" y="271" width="73" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="34"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="quantityButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="LSe-D8-Oal"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -320,13 +337,67 @@ Paintbrush</string>
                         <outlet property="cartItemsLabel" destination="7s1-2K-yqR" id="akZ-32-AQk"/>
                         <outlet property="cartMainImage" destination="bou-fz-lkq" id="4k2-7S-hlx"/>
                         <outlet property="cartPriceLabel" destination="M3G-C1-yBI" id="ROd-vA-n41"/>
+                        <outlet property="cartQuantityButton" destination="ugj-3V-Eyz" id="e9z-HF-j99"/>
                         <outlet property="cartQuantityLabel" destination="kRP-Dh-Bd3" id="qYb-Rv-b5m"/>
                         <outlet property="cartTitleLabel" destination="tXf-Kd-hrH" id="qlz-wu-abN"/>
+                        <segue destination="4rW-7y-Ezy" kind="modal" identifier="quantitySegue" id="mSo-d8-BCS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDv-6n-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="319"/>
+        </scene>
+        <!--Quantity View Controller-->
+        <scene sceneID="kHS-SE-ke9">
+            <objects>
+                <viewController id="4rW-7y-Ezy" customClass="QuantityViewController" customModule="Curious_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mz0-22-48r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vgq-fn-i9k">
+                                <rect key="frame" x="24" y="262" width="61" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="44"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="quantityButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="fKq-dr-CKe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E0h-g5-3YK">
+                                <rect key="frame" x="243" y="262" width="61" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="44"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mr1-49-lFk">
+                                <rect key="frame" x="138" y="262" width="61" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="44"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="quantityButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="IdZ-GO-5FH"/>
+                                    <action selector="quantityButtonPressed:" destination="4rW-7y-Ezy" eventType="touchUpInside" id="dOI-tx-zMv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="quantityTwoButton" destination="mr1-49-lFk" id="jBf-Mz-yFm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-V1-zi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="319"/>
         </scene>
     </scenes>
     <resources>
