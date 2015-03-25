@@ -38,9 +38,11 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         cartBuyButton.alpha = 0
         cartMainImage.alpha = 0
         cartPriceLabel.alpha = 0
+        cartQuantityButton.alpha = 0 
         cartPriceLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
-        cartQuantityLabel.alpha = 0
-        cartQuantityLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
+//        cartQuantityLabel.alpha = 0
+//        cartQuantityLabel.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        cartQuantityButton.transform = CGAffineTransformMakeScale(0.1, 0.1)
         cartTitleLabel.alpha = 0
         cartItemsLabel.alpha = 0
 
@@ -87,7 +89,8 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         UIView.animateWithDuration(0.8, delay: 0.4, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
             self.cartPriceLabel.transform = CGAffineTransformMakeScale(1, 1)
-            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(1, 1)
+//            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(1, 1)
+            self.cartQuantityButton.transform = CGAffineTransformMakeScale(1, 1)
             self.cartTitleLabel.textColor = UIColor.whiteColor()
             self.cartPriceLabel.textColor = UIColor.whiteColor()
         
@@ -119,8 +122,9 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
 //            self.cartPriceLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
 //            self.cartQuantityLabel.transform = CGAffineTransformMakeScale(0.01, 0.01)
             self.cartItemsLabel.alpha = 0
-            self.cartQuantityLabel.alpha = 0
+//            self.cartQuantityLabel.alpha = 0
             self.cartPriceLabel.alpha = 0
+            self.cartQuantityButton.alpha = 0
         }) { (Bool) -> Void in
             //
         }
@@ -168,9 +172,10 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
                 UIView.animateKeyframesWithDuration(0.4, delay: 0.5, options: UIViewKeyframeAnimationOptions.AllowUserInteraction, animations: { () -> Void in
                     self.cartMainImage.alpha = 1
                     self.cartPriceLabel.alpha = 1
-                    self.cartQuantityLabel.alpha = 1
+//                    self.cartQuantityLabel.alpha = 1
                     self.cartTitleLabel.alpha = 1
                     self.cartItemsLabel.alpha = 1
+                    self.cartQuantityButton.alpha = 1
 
                 }, completion: nil)
                 }) { (finished: Bool) -> Void in

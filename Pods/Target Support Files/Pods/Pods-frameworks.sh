@@ -49,9 +49,11 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'PNChart.framework'
+  install_framework 'Spring.framework'
   install_framework 'UICountingLabel.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'PNChart.framework'
+  install_framework 'Spring.framework'
   install_framework 'UICountingLabel.framework'
 fi

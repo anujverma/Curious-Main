@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 protocol QuantityNumberDelegate{
 
@@ -19,7 +20,13 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
 
     var isPresenting: Bool = true
 
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var quantityOneButton: UIButton!
     @IBOutlet weak var quantityTwoButton: UIButton! = UIButton()
+    @IBOutlet weak var quantityThreeButton: UIButton!
+    @IBOutlet weak var quantityFourButton: SpringButton!
+    @IBOutlet weak var quantityFiveButton: SpringButton!
+    @IBOutlet weak var quantitySixButton: SpringButton!
     
     var delegate:QuantityNumberDelegate? = nil
     
@@ -34,7 +41,7 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        backgroundView.alpha = 0.8
         println(quantityTwoButton.titleLabel!.text!)
     }
 
@@ -95,13 +102,42 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
     
 
     @IBAction func quantityButtonPressed(sender: AnyObject) {
+        
+        var btn = sender as UIButton
+        
         if (delegate != nil) {
+            
+            if btn.tag == 2 {
             let information: NSString = quantityTwoButton.titleLabel!.text!
             delegate!.quantityAmount(information)
+//            dismissViewControllerAnimated(true, completion: nil)
+            } else if btn.tag == 3 {
+                let information: NSString = quantityThreeButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+//                dismissViewControllerAnimated(true, completion: nil)
+            } else if btn.tag == 1 {
+                let information: NSString = quantityOneButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+//                dismissViewControllerAnimated(true, completion: nil)
+            } else if btn.tag == 4 {
+                let information: NSString = quantityFourButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+            } else if btn.tag == 5 {
+                let information: NSString = quantityFiveButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+            } else if btn.tag == 6 {
+                let information: NSString = quantitySixButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+            }
+            
             dismissViewControllerAnimated(true, completion: nil)
         }
-    }
+        }
+    
     
 
+    @IBAction func pressBackButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
