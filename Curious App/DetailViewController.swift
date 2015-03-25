@@ -16,10 +16,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var projectDescription: UILabel!
     @IBOutlet weak var instructionsScrollView: UIScrollView!
-    @IBOutlet weak var instructions: UIView!
     @IBOutlet weak var buyButton: UIButton!
-    @IBOutlet weak var instructionsStepNumber: UILabel!
-    @IBOutlet weak var instructionsStepDescription: UILabel!
     
     //for scrubbing
     var imageNamePrefix:String = ""
@@ -44,11 +41,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //VIGNESH - to remove instructions view from the storyboard when possible
-        //Reason - Adding all of it by code
-        instructions.removeFromSuperview()
 
         
         // Do any additional setup after loading the view.

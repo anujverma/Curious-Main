@@ -26,8 +26,6 @@
         <mutableArray key="Edmondsans-Regular.otf">
             <string>Edmondsans-Regular</string>
             <string>Edmondsans-Regular</string>
-            <string>Edmondsans-Regular</string>
-            <string>Edmondsans-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -175,31 +173,6 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="2hb-AX-t8d">
                                                 <rect key="frame" x="30" y="360" width="320" height="208"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" id="63C-Wx-Mlk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2d-pZ-C58">
-                                                                <rect key="frame" x="61" y="25" width="247" height="155"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <string key="text">Ethical meggings aesthetic whatever, irony Tumblr heirloom freegan sustainable salvia XOXO fashion axe gastropub roof party. Flannel deep v paleo mixtape pork belly. </string>
-                                                                <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ycp-t6-UGS">
-                                                                <rect key="frame" x="19" y="20" width="34" height="36"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="30"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </view>
-                                                </subviews>
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="MuD-E6-X8F" appends="YES" id="Rkd-TP-e8c"/>
@@ -236,10 +209,7 @@
                         <outlet property="buyButton" destination="ZGN-4R-wgc" id="Qjh-dn-SUb"/>
                         <outlet property="carouselImageView" destination="niW-32-KAY" id="6wE-9f-Pi7"/>
                         <outlet property="detailView" destination="4DV-Fl-cDE" id="K9f-z5-vqp"/>
-                        <outlet property="instructions" destination="63C-Wx-Mlk" id="EMg-ba-IGi"/>
                         <outlet property="instructionsScrollView" destination="2hb-AX-t8d" id="QHG-jn-1Vf"/>
-                        <outlet property="instructionsStepDescription" destination="N2d-pZ-C58" id="tgT-lO-fDr"/>
-                        <outlet property="instructionsStepNumber" destination="Ycp-t6-UGS" id="53T-zz-MZS"/>
                         <outlet property="projectDescription" destination="r2F-dw-N1H" id="MAB-Lt-Ohh"/>
                         <outlet property="projectTitle" destination="2w9-sF-YeE" id="YCa-ES-7vi"/>
                         <segue destination="Xy5-uM-3Cw" kind="modal" identifier="cartSegue" id="3He-3n-dQ8"/>
