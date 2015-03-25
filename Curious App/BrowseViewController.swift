@@ -37,8 +37,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var TOP_alpha:CGFloat! = 0.2
     var BOTTOM_alpha:CGFloat! = 0.7
-    var TOP_scale:CGFloat! = 1.5
-    var BOTTOM_scale:CGFloat! = 1.0
+    var TOP_scale:CGFloat! = 1.0
+    var BOTTOM_scale:CGFloat! = 0.6
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,6 +189,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.mask.alpha = TOP_alpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(TOP_scale, TOP_scale)
             projectCell.projectLabel.center.y = 100
+            projectCell.projectSubLabel.center.y = 100+30
             projectCell.projectSubLabel.alpha = 1
 
         }
@@ -196,12 +197,14 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             projectCell.mask.alpha = newAlpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(newScale, newScale)
             projectCell.projectLabel.center.y = newHeight/2
+            projectCell.projectSubLabel.center.y = newHeight/2 + 30
             projectCell.projectSubLabel.alpha = (newHeight - 100) / 100
         }
         else {
             projectCell.mask.alpha = BOTTOM_alpha
             projectCell.projectLabel.transform = CGAffineTransformMakeScale(BOTTOM_scale, BOTTOM_scale)
             projectCell.projectLabel.center.y = 50
+            projectCell.projectSubLabel.center.y = 50 + 30
             projectCell.projectSubLabel.alpha = 0
         }
         
