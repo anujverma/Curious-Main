@@ -121,6 +121,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     func setupInstructions() {
 
+        instructionsScrollView.alpha = 0
+        
         //for each image, create an instruction view and add it to the scrollview
         for var i=0; i<=imageNameMAX; i++ {
             var vframe:CGRect = CGRectMake(instructionsScrollView.frame.width * CGFloat(i), 0.0, instructionsScrollView.frame.width, instructionsScrollView.frame.height)
@@ -149,9 +151,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             instructionView.addSubview(stepDesc)
             
             instructionsScrollView.addSubview(instructionView)
-            instructionsScrollView.delegate = self
         }
-        
+
+        instructionsScrollView.delegate = self
         instructionsScrollView.contentSize = CGSize(width: CGFloat(imageNameMAX+1)*instructionsScrollView.frame.width, height: instructionsScrollView.frame.height)
         println(instructionsScrollView.contentSize)
     }
@@ -190,6 +192,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
                 UIView.animateWithDuration(0.4, animations: { () -> Void in
                     self.rewind.alpha = 0
                     self.rewindLabel.alpha = 0
+                    self.instructionsScrollView.alpha = 1
+                    
                 }, completion: { (Bool) -> Void in
                     self.rewind.removeFromSuperview()
                     self.rewindLabel.removeFromSuperview()
