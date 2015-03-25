@@ -253,10 +253,6 @@
                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="Zz6-o9-Ob6"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jgl-CM-dQI">
                                 <rect key="frame" x="8" y="22" width="39" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -309,6 +305,10 @@ Paintbrush</string>
                                     <action selector="quantityButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="LSe-D8-Oal"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -325,6 +325,39 @@ Paintbrush</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDv-6n-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="319"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="QEq-L3-NtW">
+            <objects>
+                <viewController id="Mz6-cs-Hgm" customClass="CheckoutViewController" customModule="Curious_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nZn-M3-2fb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NWu-fs-7U3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P7W-7e-amo">
+                                <rect key="frame" x="48" y="227" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="X2o-Ec-kKD">
+                                <rect key="frame" x="79" y="391" width="178" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkoutGiftBox" destination="X2o-Ec-kKD" id="rgv-9e-got"/>
+                        <outlet property="checkoutGiftBoxTop" destination="P7W-7e-amo" id="XJi-tC-nUG"/>
+                        <outlet property="checkoutMainImage" destination="NWu-fs-7U3" id="3NL-on-knR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMg-xC-BVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="-306"/>
         </scene>
         <!--Quantity View Controller-->
         <scene sceneID="kHS-SE-ke9">
