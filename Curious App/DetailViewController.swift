@@ -38,6 +38,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     var detailTitle: String!
     var detailSubLabel: String!
     
+    //for scrolling instructions
+    var scrollPos:CGFloat! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -221,6 +223,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         }
         else if sender.state == UIGestureRecognizerState.Ended {
             
+            instructionsScrollView.contentOffset.x = CGFloat(currentImage) * instructionsScrollView.frame.width
+            
         }
     }
     
@@ -229,7 +233,49 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func instructionsDidPan(sender: UIPanGestureRecognizer) {
-        println("panning")
+        var translation = sender.translationInView(self.view)
+        var velocity = sender.velocityInView(self.view)
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            scrollPos = instructionsScrollView.contentOffset.x
+        }
+        else if sender.state == UIGestureRecognizerState.Changed {
+            var newPos = scrollPos - translation.x
+            if(newPos < 0) {
+                instructionsScrollView.contentOffset.x = 0
+            }
+            
+            else if(newPos > instructionsScrollView.contentSize.width-instructionsScrollView.frame.width) {
+                instructionsScrollView.contentOffset.x = instructionsScrollView.contentSize.width-instructionsScrollView.frame.width
+            }
+            
+            else {
+                instructionsScrollView.contentOffset.x = newPos
+            }
+            
+        }
+        else if sender.state == UIGestureRecognizerState.Ended {
+            var stepNum = Int(instructionsScrollView.contentOffset.x / instructionsScrollView.frame.width)
+            
+            if(velocity.x > 0) {
+                //go to next step
+                UIView.animateWithDuration(0.4, animations: { () -> Void in
+                    self.instructionsScrollView.contentOffset.x = CGFloat(stepNum) * self.instructionsScrollView.frame.width
+                })
+
+                carouselImageView.image = UIImage(named: imageNamePrefix + "-" + String(stepNum) + ".jpg")
+                currentImage = stepNum
+            }
+            else {
+                //go to previous step
+                UIView.animateWithDuration(0.4, animations: { () -> Void in
+                    self.instructionsScrollView.contentOffset.x = CGFloat(stepNum+1) * self.instructionsScrollView.frame.width
+                })
+                carouselImageView.image = UIImage(named: imageNamePrefix + "-" + String(stepNum+1) + ".jpg")
+                currentImage = stepNum+1
+
+            }
+        }
     }
     
 }

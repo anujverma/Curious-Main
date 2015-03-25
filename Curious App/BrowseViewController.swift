@@ -63,6 +63,10 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     //Custom Transition
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as DetailViewController
