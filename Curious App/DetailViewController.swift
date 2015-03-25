@@ -15,18 +15,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var carouselImageView: UIImageView!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var projectDescription: UILabel!
-    @IBOutlet weak var projectDate: UILabel!
-    @IBOutlet weak var step1Button: UIButton!
-    @IBOutlet weak var step2Button: UIButton!
-    @IBOutlet weak var step3Button: UIButton!
-    @IBOutlet weak var step4Button: UIButton!
-    @IBOutlet weak var step5Button: UIButton!
-    @IBOutlet weak var step6Button: UIButton!
-    @IBOutlet weak var step7Button: UIButton!
-    @IBOutlet weak var step8Button: UIButton!
-    @IBOutlet weak var instructions: UILabel!
+    @IBOutlet weak var instructions: UIView!
     @IBOutlet weak var buyButton: UIButton!
-
+    @IBOutlet weak var instructionsStepNumber: UILabel!
+    @IBOutlet weak var instructionsStepDescription: UILabel!
+    
     //for scrubbing
     var imageNamePrefix:String = ""
     var imageNameMIN:Int = 0
@@ -57,6 +50,9 @@ class DetailViewController: UIViewController {
         projectTitle.text = detailTitle
         projectDescription.text = detailSubLabel
         
+        instructionsStepDescription.numberOfLines = 0
+        instructionsStepDescription.sizeToFit()
+        
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
         scrollBackSpeed = NSTimeInterval( 4 / Double(imageNameMAX) )
@@ -77,7 +73,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(rewind)
         
         //give everything time to load and then rewind back to first step
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +112,7 @@ class DetailViewController: UIViewController {
             else {
                 
                 UIView.animateWithDuration(0.4, animations: { () -> Void in
+                    self.instructions.alpha = 1
                     self.rewind.alpha = 0
                 }, completion: { (Bool) -> Void in
                     self.rewind.removeFromSuperview()

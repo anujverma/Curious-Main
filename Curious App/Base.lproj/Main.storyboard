@@ -19,6 +19,8 @@
         </mutableArray>
         <mutableArray key="Edmondsans-Regular.otf">
             <string>Edmondsans-Regular</string>
+            <string>Edmondsans-Regular</string>
+            <string>Edmondsans-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -163,86 +165,29 @@
                                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="jJh-Sx-7g1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tal-pe-HCn">
-                                                <rect key="frame" x="42" y="385" width="30" height="30"/>
+                                            <view contentMode="scaleToFill" id="63C-Wx-Mlk">
+                                                <rect key="frame" x="26" y="373" width="328" height="202"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="1" backgroundImage="number circle ">
-                                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ySC-bY-rsF">
-                                                <rect key="frame" x="80" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="2" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ltT-45-fa5">
-                                                <rect key="frame" x="118" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="3" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RCn-Xa-bpD">
-                                                <rect key="frame" x="156" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="4" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mQM-TN-KFO">
-                                                <rect key="frame" x="194" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="5" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bEK-6Y-sKd">
-                                                <rect key="frame" x="232" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="6" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nn3-kC-Eu7">
-                                                <rect key="frame" x="270" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="7" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eGg-Lk-ho3">
-                                                <rect key="frame" x="308" y="385" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="8" backgroundImage="number circle ">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2d-pZ-C58">
-                                                <rect key="frame" x="46" y="385" width="304" height="190"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Ethical meggings aesthetic whatever, irony Tumblr heirloom freegan sustainable salvia XOXO fashion axe gastropub roof party. Flannel deep v paleo mixtape pork belly. Portland heirloom squid four loko. Aesthetic lo-fi selvage, jean shorts raw denim Intelligentsia artisan pop-up sustainable kitsch mlkshk fanny pack irony.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2d-pZ-C58">
+                                                        <rect key="frame" x="61" y="25" width="247" height="155"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <string key="text">Ethical meggings aesthetic whatever, irony Tumblr heirloom freegan sustainable salvia XOXO fashion axe gastropub roof party. Flannel deep v paleo mixtape pork belly. </string>
+                                                        <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="16"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ycp-t6-UGS">
+                                                        <rect key="frame" x="19" y="20" width="34" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="30"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -274,17 +219,11 @@
                         <outlet property="buyButton" destination="ZGN-4R-wgc" id="Qjh-dn-SUb"/>
                         <outlet property="carouselImageView" destination="niW-32-KAY" id="6wE-9f-Pi7"/>
                         <outlet property="detailView" destination="4DV-Fl-cDE" id="K9f-z5-vqp"/>
-                        <outlet property="instructions" destination="N2d-pZ-C58" id="jiM-3J-UMz"/>
+                        <outlet property="instructions" destination="63C-Wx-Mlk" id="EMg-ba-IGi"/>
+                        <outlet property="instructionsStepDescription" destination="N2d-pZ-C58" id="tgT-lO-fDr"/>
+                        <outlet property="instructionsStepNumber" destination="Ycp-t6-UGS" id="53T-zz-MZS"/>
                         <outlet property="projectDescription" destination="r2F-dw-N1H" id="MAB-Lt-Ohh"/>
                         <outlet property="projectTitle" destination="2w9-sF-YeE" id="YCa-ES-7vi"/>
-                        <outlet property="step1Button" destination="Tal-pe-HCn" id="yOV-E1-FQC"/>
-                        <outlet property="step2Button" destination="ySC-bY-rsF" id="SC8-At-jJy"/>
-                        <outlet property="step3Button" destination="ltT-45-fa5" id="7e6-uI-NZ5"/>
-                        <outlet property="step4Button" destination="RCn-Xa-bpD" id="dDB-O1-6qG"/>
-                        <outlet property="step5Button" destination="mQM-TN-KFO" id="7en-Uv-bXL"/>
-                        <outlet property="step6Button" destination="bEK-6Y-sKd" id="Qwd-LW-tes"/>
-                        <outlet property="step7Button" destination="Nn3-kC-Eu7" id="Px7-h3-fTY"/>
-                        <outlet property="step8Button" destination="eGg-Lk-ho3" id="eOr-Cg-a2P"/>
                         <segue destination="Xy5-uM-3Cw" kind="modal" identifier="cartSegue" id="3He-3n-dQ8"/>
                     </connections>
                 </viewController>
@@ -395,7 +334,6 @@ Paintbrush</string>
         <image name="bottom-green" width="84" height="84"/>
         <image name="bottom-pink" width="84" height="84"/>
         <image name="bottom-yellow" width="171" height="84"/>
-        <image name="number circle " width="29" height="28"/>
         <image name="string-4" width="600" height="612"/>
         <image name="top-green" width="171" height="84"/>
         <image name="top-pink" width="84" height="171"/>

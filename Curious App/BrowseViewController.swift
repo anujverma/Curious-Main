@@ -123,73 +123,20 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             toViewController.view.alpha = 0
             destinationVC.detailView.alpha = 0
             destinationVC.instructions.alpha = 0
-            destinationVC.step1Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step2Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step3Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step4Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step5Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step6Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step7Button.transform = CGAffineTransformMakeScale(0, 0)
-            destinationVC.step8Button.transform = CGAffineTransformMakeScale(0, 0)
             
             //println(images[selectedImage.row])
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
-                
-                
                 toViewController.view.alpha = 1
-                
                 self.movingImageView.frame = destinationVC.carouselImageView.frame
-                
                 }) { (finished: Bool) -> Void in
                     
                     self.movingImageView.removeFromSuperview()
                     self.projectsTableView.reloadData()
-                    
                     UIView.animateWithDuration(0.5, delay: 0.1, options: nil, animations: { () -> Void in
                         destinationVC.detailView.alpha = 1
                         }, completion: { (finished) -> Void in
-                            
-                            
-                            //animating the steps buttons in when detailView is loaded
-                            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                destinationVC.step1Button.transform = CGAffineTransformMakeScale(1, 1)
-                                destinationVC.instructions.alpha = 1
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step2Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step3Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step4Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.15, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil
-                                    , animations: { () -> Void in
-                                        destinationVC.step5Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step6Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.25, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step7Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: nil)
-                                
-                                UIView.animateWithDuration(0.3, delay: 0.3, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
-                                    destinationVC.step8Button.transform = CGAffineTransformMakeScale(1, 1)
-                                    }, completion: { (finished) -> Void in
-                                        
-                                })
-                                
-                                
-                                }, completion: nil)
-                            
+                            //
                     })
                     
                     transitionContext.completeTransition(true)
