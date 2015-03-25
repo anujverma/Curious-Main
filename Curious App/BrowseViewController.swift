@@ -122,7 +122,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             toViewController.view.alpha = 0
             destinationVC.detailView.alpha = 0
-            destinationVC.instructions.alpha = 0
             
             //println(images[selectedImage.row])
             

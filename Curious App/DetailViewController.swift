@@ -9,7 +9,7 @@
 import UIKit
 import PNChart
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var carouselImageView: UIImageView!
@@ -44,6 +44,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //VIGNESH - to remove instructions view from the storyboard when possible
+        //Reason - Adding all of it by code
+        instructions.removeFromSuperview()
+
+        
         // Do any additional setup after loading the view.
         currentImage = imageNameMIN
 
@@ -53,21 +60,22 @@ class DetailViewController: UIViewController {
         projectTitle.text = detailTitle
         projectDescription.text = detailSubLabel
         
-        instructionsStepDescription.numberOfLines = 0
-        instructionsStepDescription.sizeToFit()
-        
         imageNamePrefix=carouselImage.componentsSeparatedByString("-") [0]
         imageNameMAX = imageNameMAXs[imageNamePrefix] as Int!
         scrollBackSpeed = NSTimeInterval( rewindDuration / Double(imageNameMAX) )
         
-        //set up autoscrollback counter
+        //set up auto-rewind counter
         setupRewindCounter()
         
-        //set up message
+        //set up rewind message
         setupRewindLabel()
+
+        //set up instructions
+        setupInstructions()
         
         //give everything time to load and then rewind back to first step
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "resetToFirstStep", userInfo: nil, repeats: false)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +125,43 @@ class DetailViewController: UIViewController {
         self.view.addSubview(rewindLabel)
     }
     
+    func setupInstructions() {
+
+        //for each image, create an instruction view and add it to the scrollview
+        for var i=0; i<=imageNameMAX; i++ {
+            var vframe:CGRect = CGRectMake(instructionsScrollView.frame.width * CGFloat(i), 0.0, instructionsScrollView.frame.width, instructionsScrollView.frame.height)
+            var instructionView:UIView = UIView(frame: vframe)
+            instructionView.userInteractionEnabled = true
+            
+            var stepNumFrame:CGRect = CGRectMake(10, 20, 40, 30)
+            var stepNum:UILabel = UILabel(frame: stepNumFrame)
+            var num = i+1
+            if (num < 10) {
+                stepNum.text = "0" + String(num)
+            }
+            else {
+                stepNum.text = String(num)
+            }
+            stepNum.textAlignment = NSTextAlignment.Right
+            stepNum.font = UIFont(name: "Edmondsans-Regular", size: 30.0)!
+            instructionView.addSubview(stepNum)
+            
+            var stepDescFrame:CGRect = CGRectMake(60, 20, 240, instructionsScrollView.frame.height-40.0)
+            var stepDesc:UILabel = UILabel(frame: stepDescFrame)
+            stepDesc.text = Lorem.sentences(2)
+            stepDesc.font = UIFont(name: "Edmondsans-Regular", size: 18.0)!
+            stepDesc.numberOfLines = 0
+            stepDesc.sizeToFit()
+            instructionView.addSubview(stepDesc)
+            
+            instructionsScrollView.addSubview(instructionView)
+            instructionsScrollView.delegate = self
+        }
+        
+        instructionsScrollView.contentSize = CGSize(width: CGFloat(imageNameMAX+1)*instructionsScrollView.frame.width, height: instructionsScrollView.frame.height)
+        println(instructionsScrollView.contentSize)
+    }
+    
     func resetToFirstStep() {
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -149,7 +194,6 @@ class DetailViewController: UIViewController {
             else {
                 
                 UIView.animateWithDuration(0.4, animations: { () -> Void in
-                    self.instructions.alpha = 1
                     self.rewind.alpha = 0
                     self.rewindLabel.alpha = 0
                 }, completion: { (Bool) -> Void in
@@ -193,6 +237,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func instructionsDidPan(sender: UIPanGestureRecognizer) {
+        println("panning")
     }
     
 }
