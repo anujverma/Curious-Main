@@ -19,7 +19,10 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
 
     var isPresenting: Bool = true
 
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var quantityOneButton: UIButton!
     @IBOutlet weak var quantityTwoButton: UIButton! = UIButton()
+    @IBOutlet weak var quantityThreeButton: UIButton!
     
     var delegate:QuantityNumberDelegate? = nil
     
@@ -34,7 +37,7 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        backgroundView.alpha = 0.9
         println(quantityTwoButton.titleLabel!.text!)
     }
 
@@ -95,12 +98,29 @@ class QuantityViewController: UIViewController, UIViewControllerTransitioningDel
     
 
     @IBAction func quantityButtonPressed(sender: AnyObject) {
+        
+        var btn = sender as UIButton
+        
         if (delegate != nil) {
+            
+            if btn.tag == 2 {
             let information: NSString = quantityTwoButton.titleLabel!.text!
             delegate!.quantityAmount(information)
+//            dismissViewControllerAnimated(true, completion: nil)
+            } else if btn.tag == 3 {
+                let information: NSString = quantityThreeButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+//                dismissViewControllerAnimated(true, completion: nil)
+            } else if btn.tag == 1 {
+                let information: NSString = quantityOneButton.titleLabel!.text!
+                delegate!.quantityAmount(information)
+//                dismissViewControllerAnimated(true, completion: nil)
+            }
+            
             dismissViewControllerAnimated(true, completion: nil)
         }
-    }
+        }
+    
     
 
 
