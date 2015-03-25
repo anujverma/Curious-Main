@@ -169,7 +169,7 @@
                                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="jJh-Sx-7g1"/>
                                                 </connections>
                                             </button>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="2hb-AX-t8d">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="2hb-AX-t8d">
                                                 <rect key="frame" x="30" y="360" width="320" height="208"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
@@ -197,6 +197,10 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="MuD-E6-X8F" appends="YES" id="Rkd-TP-e8c"/>
+                                                </connections>
                                             </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,9 +243,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HF-zc-O0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="It8-v9-Ufa">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="It8-v9-Ufa" userLabel="Pan on Image">
                     <connections>
                         <action selector="imageDidPan:" destination="dcb-7a-WCz" id="x5w-s7-wND"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="MuD-E6-X8F" userLabel="Pan on Steps">
+                    <connections>
+                        <action selector="instructionsDidPan:" destination="dcb-7a-WCz" id="Sb3-B3-tyk"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

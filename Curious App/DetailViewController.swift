@@ -154,5 +154,7 @@ class DetailViewController: UIViewController {
         performSegueWithIdentifier("cartSegue", sender: self)
     }
     
+    @IBAction func instructionsDidPan(sender: UIPanGestureRecognizer) {
+    }
     
 }
