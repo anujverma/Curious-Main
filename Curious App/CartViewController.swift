@@ -200,4 +200,8 @@ class CartViewController: UIViewController, UIViewControllerTransitioningDelegat
         performSegueWithIdentifier("quantitySegue", sender: self)
     }
     
+    @IBAction func buyButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("checkoutSegue", sender: self)
+    }
+    
 }

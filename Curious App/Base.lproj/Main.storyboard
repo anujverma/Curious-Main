@@ -23,6 +23,7 @@
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
             <string>Edmondsans-Medium</string>
+            <string>Edmondsans-Medium</string>
         </mutableArray>
         <mutableArray key="Edmondsans-Regular.otf">
             <string>Edmondsans-Regular</string>
@@ -164,7 +165,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="18"/>
-                                                <state key="normal" title="Buy kit"/>
+                                                <state key="normal" title="Add to cart"/>
                                                 <connections>
                                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="jJh-Sx-7g1"/>
                                                 </connections>
@@ -250,20 +251,14 @@
                                     <color key="titleColor" red="0.10196078431372549" green="0.80392156862745101" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="buyButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="C3c-Ac-pUW"/>
                                     <action selector="buyButtonWasTapped:" destination="dcb-7a-WCz" eventType="touchUpInside" id="Zz6-o9-Ob6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jgl-CM-dQI">
-                                <rect key="frame" x="8" y="22" width="39" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Back Arrow">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonDidTap:" destination="dcb-7a-WCz" eventType="touchUpInside" id="pXH-GL-80l"/>
-                                    <action selector="backButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="WJJ-Zc-b04"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK STRING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tXf-Kd-hrH">
                                 <rect key="frame" x="16" y="238" width="268" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -305,10 +300,17 @@ Paintbrush</string>
                                     <action selector="quantityButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="LSe-D8-Oal"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bou-fz-lkq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jgl-CM-dQI">
+                                <rect key="frame" x="8" y="20" width="39" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" image="Back Arrow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTap:" destination="dcb-7a-WCz" eventType="touchUpInside" id="pXH-GL-80l"/>
+                                    <action selector="backButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="WJJ-Zc-b04"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -320,6 +322,7 @@ Paintbrush</string>
                         <outlet property="cartQuantityButton" destination="ugj-3V-Eyz" id="e9z-HF-j99"/>
                         <outlet property="cartTitleLabel" destination="tXf-Kd-hrH" id="qlz-wu-abN"/>
                         <segue destination="4rW-7y-Ezy" kind="modal" identifier="quantitySegue" id="mSo-d8-BCS"/>
+                        <segue destination="Mz6-cs-Hgm" kind="modal" identifier="checkoutSegue" id="VGe-If-cqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDv-6n-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,30 +337,54 @@ Paintbrush</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NWu-fs-7U3">
+                            <view contentMode="scaleToFill" id="MIe-HS-ewF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NWu-fs-7U3" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P7W-7e-amo">
-                                <rect key="frame" x="48" y="227" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift-wrapping" id="X2o-Ec-kKD" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="X2o-Ec-kKD">
-                                <rect key="frame" x="79" y="391" width="178" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xBG-Lp-uu9">
+                                <rect key="frame" x="16" y="391" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="18"/>
+                                <state key="normal" title="Send it to me!">
+                                    <color key="titleColor" red="0.1019607843" green="0.80392156859999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finalBuyButton:" destination="Mz6-cs-Hgm" eventType="touchUpInside" id="TK8-S4-KaR"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="MIe-HS-ewF" id="HVz-CI-GTC"/>
                         <outlet property="checkoutGiftBox" destination="X2o-Ec-kKD" id="rgv-9e-got"/>
-                        <outlet property="checkoutGiftBoxTop" destination="P7W-7e-amo" id="XJi-tC-nUG"/>
                         <outlet property="checkoutMainImage" destination="NWu-fs-7U3" id="3NL-on-knR"/>
+                        <outlet property="sendMeButton" destination="xBG-Lp-uu9" id="SOD-f5-phy"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="backBrowseSegue" id="5dT-kj-WUa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMg-xC-BVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="-306"/>
+            <point key="canvasLocation" x="529" y="-74"/>
         </scene>
         <!--Quantity View Controller-->
         <scene sceneID="kHS-SE-ke9">
@@ -540,8 +567,6 @@ Paintbrush</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonDidTap:" destination="dcb-7a-WCz" eventType="touchUpInside" id="Zu5-XM-Prh"/>
-                                    <action selector="backButtonPressed:" destination="Xy5-uM-3Cw" eventType="touchUpInside" id="rEq-Ia-ElA"/>
                                     <action selector="pressBackButton:" destination="4rW-7y-Ezy" eventType="touchUpInside" id="SkS-kq-Wh0"/>
                                 </connections>
                             </button>
@@ -559,7 +584,7 @@ Paintbrush</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-V1-zi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="319"/>
+            <point key="canvasLocation" x="1374" y="319"/>
         </scene>
     </scenes>
     <resources>
@@ -567,6 +592,7 @@ Paintbrush</string>
         <image name="bottom-green" width="84" height="84"/>
         <image name="bottom-pink" width="84" height="84"/>
         <image name="bottom-yellow" width="171" height="84"/>
+        <image name="gift-wrapping" width="640" height="438"/>
         <image name="string-4" width="600" height="612"/>
         <image name="top-green" width="171" height="84"/>
         <image name="top-pink" width="84" height="171"/>
