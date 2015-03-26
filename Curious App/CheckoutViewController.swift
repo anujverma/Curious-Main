@@ -31,7 +31,7 @@ class CheckoutViewController: UIViewController, UIViewControllerTransitioningDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        backgroundView.alpha = 0.8
+        backgroundView.alpha = 0.9
     }
 
     override func didReceiveMemoryWarning() {
